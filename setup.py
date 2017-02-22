@@ -4,7 +4,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def read(fname):
@@ -12,11 +12,10 @@ def read(fname):
 
 setup(
 
-    name='vibbo-devops--libs',
+    name='devops-vibbo-libs',
 
     version='1.0',
-
-    description='Python tools for deploy and maintenance',
+    description='common python libs to use in vibbo',
     long_description=read('README.md'),
 
     author='Schibsted Spain devops vibbo',
@@ -31,4 +30,6 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
     ],
+
+    packages=find_packages(),
 )
