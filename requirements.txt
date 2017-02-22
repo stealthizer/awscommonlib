@@ -1,0 +1,4 @@
+troposphere
+boto
+botocore
+boto3
