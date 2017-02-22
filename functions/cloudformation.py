@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from functions.boto_connections import BotoConnections
+from functions.boto_connections import AWSBotoAdapter
 
 
 class Cloudformation(object):
@@ -7,8 +7,8 @@ class Cloudformation(object):
     def __init__(self, account_name, environment, number, resource, role):
         self.__environment = environment
         self.__account_name = account_name
-        self.__label = self.__account_name + "-" + self.__environment
-        self.__connection = BotoConnections()
+        self.__profile = self.__account_name + "-" + self.__environment
+        self.__connection = AWSBotoAdapter()
         self.__resource = resource
         self.__number = number
         self.__role = role
@@ -20,7 +20,7 @@ class Cloudformation(object):
         return self.__stackName
 
     def get_connection_cloudformation(self):
-        conn = self.__connection.get_client_connection_to_aws(self.__resource, self.__label)
+        conn = self.__connection.get_client(self.__resource, self.__profile)
         return conn
 
     def exist_cloud_formation(self, cf):
