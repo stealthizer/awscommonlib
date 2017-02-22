@@ -4,7 +4,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from unittest import TestCase
-from functions.cloudformation import Cloudformation
+from aws.cloudformation import Cloudformation
 
 class TestDistilDeploy(TestCase):
 

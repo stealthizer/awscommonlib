@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from functions.boto_connections import AWSBotoAdapter
+from aws.boto_connections import AWSBotoAdapter
 
 
 class Cloudformation(object):
@@ -33,5 +33,4 @@ class Cloudformation(object):
                     break
                 else:
                     exist = False
-
         return exist

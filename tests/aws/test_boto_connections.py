@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 
 from unittest import TestCase
 from mock import patch, Mock
-from functions.boto_connections import AWSBotoAdapter
+from aws.boto_connections import AWSBotoAdapter
 
 
 class TestAWSBotoLib(TestCase):
