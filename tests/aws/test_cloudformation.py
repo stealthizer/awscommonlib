@@ -34,10 +34,10 @@ class TestDistilDeploy(TestCase):
         self.__test_cloudformation_pro = Cloudformation(self.__account, self.__environment_pro, self.__number_pro, self.__resource, self.__role)
 
     def __when_want_stackname_pre(self):
-        self.__stackNamePre = self.__test_cloudformation_pre.get_stackname()
+        self.__stackNamePre = self.__test_cloudformation_pre.get_stackName()
 
     def __when_want_stackname_pro(self):
-        self.__stackNamePro = self.__test_cloudformation_pro.get_stackname()
+        self.__stackNamePro = self.__test_cloudformation_pro.get_stackName()
 
     def __then_assert_stackname_pro_is_correct(self):
         self.assertEqual(self.__stackNamePro, self.__environment_pro + "-distil-dns")

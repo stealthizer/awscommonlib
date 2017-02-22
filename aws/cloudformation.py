@@ -12,11 +12,15 @@ class Cloudformation(object):
         self.__resource = resource
         self.__number = number
         self.__role = role
+        self.__stackName = self.__set_stackName()
 
-    def get_stackname(self):
+    def __set_stackName(self):
         self.__stackName = self.__environment + "-" + self.__role
         if self.__environment == 'pre':
             self.__stackName = "{}-{}".format(self.__stackName, self.__number)
+        return self.__stackName
+
+    def get_stackName(self):
         return self.__stackName
 
     def get_connection_cloudformation(self):
