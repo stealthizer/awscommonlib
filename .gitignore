@@ -1,0 +1,5 @@
+.idea/
+.tox/
+*.iml
+*.pyc
+vibbo_devops_libs.egg-info/
