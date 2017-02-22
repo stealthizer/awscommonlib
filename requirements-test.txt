@@ -1,0 +1,6 @@
+argparse==1.2.1
+botocore
+boto3
+configparser
+mock
+nose2
