@@ -12,16 +12,16 @@ def read(fname):
 
 setup(
 
-    name='devops-vibbo-libs',
+    name='anthill',
 
     version='1.0',
-    description='common python libs to use in vibbo',
+    description='A compendium of useful python libraries',
     long_description=read('README.md'),
 
-    author='Schibsted Spain devops vibbo',
-    author_email='dev.ops.vibbo@scmspain.com',
+    author='stealthizer',
+    author_email='stealthizer',
 
-    url='https://github.schibsted.io/scmspain/devops-vibbo--libs',
+    url='https://github.com/stealthizer/anthill',
 
     classifiers=[
 
