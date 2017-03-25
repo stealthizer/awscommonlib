@@ -22,7 +22,7 @@ class Ec2Adapter:
                 for tags in instance['Instances'][0]['Tags']:
                     print(tags)
                     for key in tags.keys():
-                        print(key)
+                        print(key['Key'])
 
 
                     exit(1)
