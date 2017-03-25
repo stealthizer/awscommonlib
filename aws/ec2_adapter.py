@@ -19,7 +19,9 @@ class Ec2Adapter:
             if 'PublicIpAddress' in instance['Instances'][0].keys():
                 instance_dict = {}
                 instance_dict['public_ip'] = instance['Instances'][0]['PublicIpAddress']
-                instance_dict['name'] = instance['Instances'][0]['Tags'][0]['Name']
+                print(instance['Instances'][0]['Tags'])
+                exit(1)
+                #instance_dict['name'] = instance['Instances'][0]['Tags'][0]['Name']
                 public_ips.append(instance_dict)
         print(public_ips)
         return public_ips
