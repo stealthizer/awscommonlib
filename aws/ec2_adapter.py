@@ -10,10 +10,9 @@ class Ec2Adapter:
         self.__profile = profile
 
     def __get_connection_ec2(self):
-        conn = self.__connection.get_client(self.__resource, self.__profile)
-        return conn
+        return self.__connection.get_client(self.__resource, self.__profile)
 
-    def get_ec2_ips(self):
+    def get_ec2_instances(self):
         public_ips=[]
         instances = self.__get_connection_ec2().describe_instances()['Reservations']
         for instance in instances:
