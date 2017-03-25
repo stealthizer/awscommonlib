@@ -26,5 +26,4 @@ class Ec2Adapter:
                                 if tags['Key'] == 'Name':
                                     instance_dict['name'] = tags['Value']
                     public_ips.append(instance_dict)
-        print(public_ips)
         return public_ips
