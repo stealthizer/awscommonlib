@@ -21,7 +21,7 @@ class Ec2Adapter:
                 instance_dict['public_ip'] = instance['Instances'][0]['PublicIpAddress']
                 for key in instance['Instances'][0]['Tags']:
                     if 'Name' in key:
-                        print(key['Value'])
+                        print("value:" + key['Value'])
                 exit(1)
                 #instance_dict['name'] = instance['Instances'][0]['Tags'][0]['Name']
                 public_ips.append(instance_dict)
