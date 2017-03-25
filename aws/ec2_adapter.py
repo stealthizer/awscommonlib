@@ -16,8 +16,9 @@ class Ec2Adapter:
         public_ips=[]
         instances = self.__get_connection_ec2().describe_instances()['Reservations']
         for instance in instances:
-            print(instance)
-            exit(1)
             if 'PublicIpAddress' in instance['Instances'][0].keys():
-                public_ips.append(instance['Instances'][0]['PublicIpAddress'])
+                instance_dict = {}
+                instance_dict['public_ip'] = instance['Instances'][0]['PublicIpAddress']
+                public_ips.append(instance_dict)
+        print(public_ips)
         return public_ips
