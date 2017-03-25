@@ -19,12 +19,13 @@ class Ec2Adapter:
             if 'PublicIpAddress' in instance['Instances'][0].keys():
                 instance_dict = {}
                 instance_dict['public_ip'] = instance['Instances'][0]['PublicIpAddress']
-                for tags in instance['Instances'][0]['Tags']:
-                    for key in tags.keys():
-                        if key == 'Key':
-                            if tags['Key'] == 'Name':
-                                instance_dict['name'] = tags['Value']
-                public_ips.append(instance_dict)
+                if 'Tags' in instance['Instances'][0]:
+                    for tags in instance['Instances'][0]['Tags']:
+                        for key in tags.keys():
+                            if key == 'Key':
+                                if tags['Key'] == 'Name':
+                                    instance_dict['name'] = tags['Value']
+                    public_ips.append(instance_dict)
                 print(public_ips)
                 exit(1)
         print(public_ips)
