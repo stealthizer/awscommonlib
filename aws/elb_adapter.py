@@ -3,7 +3,7 @@ from aws.boto_connections import AWSBotoAdapter
 
 class ElbAdapter:
 
-    def __init__(self):
+    def __init__(self, profile):
         self.__connection = AWSBotoAdapter()
         self.__resource = 'elb'
         self.__profile = profile
