@@ -8,7 +8,7 @@ class ElbAdapter:
         self.__resource = 'elb'
         self.__profile = profile
 
-    def __get_connection_ec2(self):
+    def __get_connection_elb(self):
         return self.__connection.get_client(self.__resource, self.__profile)
 
     def get_elb_ips(self):
