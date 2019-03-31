@@ -2,7 +2,7 @@ from unittest import TestCase
 from moto import mock_iam, mock_sts
 
 
-from awscommonlib.aws.sessions.aws_client_provider import AwsClientProvider
+from aws.sessions.aws_client_provider import AwsClientProvider
 
 
 
@@ -10,8 +10,8 @@ class TestAwsClientProvider(TestCase):
 
 
     def test_get_client_by_profile(self):
-        credential = 'milanuncios-pre'
-        region = 'eu-west-3'
+        credential = 'default'
+        region = 'eu-west-1'
         aws_resource = 'ec2'
         session = AwsClientProvider()
 
@@ -25,7 +25,7 @@ class TestAwsClientProvider(TestCase):
     @mock_sts
     def test_get_client_by_iam(self):
         credential = 'arn:aws:iam::123456789012:role/jenkins'
-        region = 'eu-west-3'
+        region = 'eu-west-1'
         aws_resource = 'ec2'
         session = AwsClientProvider()
 
