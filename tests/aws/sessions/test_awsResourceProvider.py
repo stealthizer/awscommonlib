@@ -7,8 +7,8 @@ from awscommonlib.aws.sessions.aws_resource_provider import AwsResourceProvider
 class TestAwsResourceProvider(TestCase):
 
     def test_get_resource_by_profile(self):
-        credential = 'milanuncios-pre'
-        region = 'eu-west-3'
+        credential = 'profile'
+        region = 'eu-west-1'
         aws_resource = 'ec2'
         session = AwsResourceProvider()
 
@@ -21,7 +21,7 @@ class TestAwsResourceProvider(TestCase):
     @mock_sts
     def test_get_resource_by_iam(self):
         credential = 'arn:aws:iam::123456789012:role/jenkins'
-        region = 'eu-west-3'
+        region = 'eu-west-1'
         aws_resource = 'ec2'
         session = AwsResourceProvider()
 
