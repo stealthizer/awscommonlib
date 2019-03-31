@@ -4,3 +4,4 @@ boto3
 configparser
 mock
 nose2
+moto
