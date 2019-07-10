@@ -1,8 +1,3 @@
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import os
 from setuptools import setup, find_packages
 
@@ -21,13 +16,11 @@ setup(
     author='stealthizer',
     author_email='stealthizer',
 
-    url='https://github.com/stealthizer/anthill',
+    url='https://github.com/stealthizer/awscommonlib',
 
     classifiers=[
 
         'Development Status :: 5 - Production/Stable',
-
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
     ],
 

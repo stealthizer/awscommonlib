@@ -1,13 +1,8 @@
-#!/usr/bin/env python
-from aws.boto_connections import AWSBotoAdapter
-
-
 class Ec2Adapter:
 
-    def __init__(self, profile):
-        self.__connection = AWSBotoAdapter()
-        self.__resource = 'ec2'
-        self.__profile = profile
+    def __init__(self, connection, region):
+        self.__connection = connection
+        self.__region = region
 
     def __get_connection_ec2(self):
         return self.__connection.get_client(self.__resource, self.__profile)
@@ -29,3 +24,19 @@ class Ec2Adapter:
                     public_ips.append(instance_dict)
         return public_ips
 
+    def get_latest_ami(self, image):
+        filters = [
+            {'Name': 'name', 'Values': [image]},
+            {'Name': 'tag:Built_from', 'Values': ['master']},
+            {'Name': 'root-device-type', 'Values': ['ebs']}
+        ]
+        return self.__get_newest_image(filters)
+
+    def get_available_subnets(self, vpc_id, filter):
+        return self.__get_all_subnets(vpc_id, filter)
+
+    def get_default_vpc(self):
+        filters = [
+            {'Name': 'isDefault', 'Values': ['true']}
+        ]
+        return self.__connection.describe_vpcs(Filters=filters)['Vpcs'][0]['VpcId']
