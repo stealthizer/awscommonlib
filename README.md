@@ -1,4 +1,4 @@
-# stealthizer/anthill
+# stealthizer/awscommonlib
 
 A compilation of python libraries intended to be reused in your projects
 
@@ -7,7 +7,7 @@ A compilation of python libraries intended to be reused in your projects
 Add in your requirements.txt
 
 ```
-git+ssh://git@github.com/stealthizer/anthill.git@master#aws
+git+ssh://git@github.com/stealthizer/awscommonlib.git@master#aws
 ```
 
 Install the libraries
