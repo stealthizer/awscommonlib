@@ -33,7 +33,18 @@ class Ec2Adapter:
         return self.__get_newest_image(filters)
 
     def get_available_subnets(self, vpc_id, filter):
-        return self.__get_all_subnets(vpc_id, filter)
+        return self.get_filtered_subnets(vpc_id, filter)
+
+    def get_filtered_subnets(self, vpc_id, filter):
+        filters = [
+            {'Name': 'vpc-id', 'Values': [vpc_id]},
+            {'Name': 'tag:Name', 'Values': [filter]}
+        ]
+        subnets = []
+        all_subnets = self.__connection.describe_subnets(Filters=filters)['Subnets']
+        for subnet in all_subnets:
+            subnets.append(subnet['SubnetId'])
+        return subnets
 
     def get_default_vpc(self):
         filters = [
