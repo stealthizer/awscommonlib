@@ -1,5 +1,5 @@
 from unittest import TestCase
-from anthill.aws.security_groups import Ec2SecurityGroupAdapter
+from aws.security_groups import Ec2SecurityGroupAdapter
 from troposphere import Template
 from moto import mock_ec2
 import yaml

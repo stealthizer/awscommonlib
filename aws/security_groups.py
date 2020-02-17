@@ -1,4 +1,4 @@
-from anthill.aws.ec2_adapter import Ec2Adapter
+from aws.ec2_adapter import Ec2Adapter
 import troposphere.ec2 as ec2
 from troposphere import Ref, Tags
 

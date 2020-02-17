@@ -1,6 +1,6 @@
 from unittest import TestCase
 from moto import mock_iam, mock_sts
-from mock import Mock, patch
+from mock import Mock
 from aws.sessions.aws_client_provider import AwsClientProvider
 
 
@@ -13,7 +13,7 @@ class TestAwsClientProvider(TestCase):
         aws_resource = 'ec2'
         session = AwsClientProvider()
         session.get_client = Mock()
-        client = session.get_client(aws_resource, credential, region)
+        session.get_client(aws_resource, credential, region)
         session.get_client.assert_called_with(aws_resource, credential, region)
 
     @mock_iam
