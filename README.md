@@ -4,6 +4,14 @@ A compilation of python libraries intended to be reused in your projects
 
 ## Usage
 
+You need to prepare your virtual environment first:
+
+```bash
+$ virtualenv --python=python3 venv
+$ source venv/bin/activate
+(venv) $ pip install -r requirements.txt
+```
+
 Add in your requirements.txt
 
 ```

@@ -39,7 +39,7 @@ class TestAWSBotoLib(TestCase):
             self.__aws_boto_client = self.__aws_boto_lib.get_client('aws_resource', 'test')
 
     def __then_check_if_resource_available(self):
-        self.assertEquals(self.__aws_boto_resource, 'resource')
+        self.assertEqual(self.__aws_boto_resource, 'resource')
 
     def __then_check_if_client_available(self):
-        self.assertEquals(self.__aws_boto_client, 'client')
+        self.assertEqual(self.__aws_boto_client, 'client')

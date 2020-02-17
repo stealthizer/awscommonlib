@@ -1,5 +1,4 @@
-troposphere
-boto
-botocore
-boto3
-
+boto3~=1.10
+botocore~=1.13
+troposphere~=2.5
+sceptre~=2.2

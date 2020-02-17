@@ -1,7 +1,6 @@
-argparse==1.2.1
-botocore
-boto3
-configparser
-mock
-nose2
-moto
+-r requirements.txt
+coverage~=4.5
+mock~=2.0
+moto~=1.3.4
+pytest-travis-fold~=1.3
+tox~=3.0
