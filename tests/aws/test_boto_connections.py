@@ -1,8 +1,3 @@
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
 from unittest import TestCase
 from mock import patch, Mock
 from aws.boto_connections import AWSBotoAdapter
@@ -39,7 +34,7 @@ class TestAWSBotoLib(TestCase):
             self.__aws_boto_client = self.__aws_boto_lib.get_client('aws_resource', 'test')
 
     def __then_check_if_resource_available(self):
-        self.assertEquals(self.__aws_boto_resource, 'resource')
+        self.assertEqual(self.__aws_boto_resource, 'resource')
 
     def __then_check_if_client_available(self):
-        self.assertEquals(self.__aws_boto_client, 'client')
+        self.assertEqual(self.__aws_boto_client, 'client')

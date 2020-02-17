@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 from aws.boto_connections import AWSBotoAdapter
 
 class ElbAdapter:
